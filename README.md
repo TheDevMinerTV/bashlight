@@ -144,24 +144,28 @@ cd ~/.bin
 git clone https://github.com/vergissberlin/bashlight.git
 ```
 
-**2.** Open your home bash file in editor
+Now you've got two choices, you can install with the script (see 2.1) or manually (see 2.2).
+
+### 2.1 With the installation script
+
+**2.1.1** Just run the included installation script like this. This is going to install bashlight, the git and tmux bindings.
+
+```bash
+bash ./install.bash
+```
+
+### 2.2 Manually
+
+**2.2.1** Open your home bash file in editor
 
 ``~/.bashrc`` on *linux* **or** ``~/src/profile`` on *macOS*
 
-**3.** Include bashlight/bashlight with the following line at the end of the file
+**2.2.2** Include bashlight/bashlight with the following line at the end of the file
 
 ```bash
 if [ -f ~/.bin/bashlight/bashlight ]; then
     . ~/.bin/bashlight/bashlight
 fi
-```
-
-### Optional settings
-
-To install common git and tmux settings are tailored with use for bashlight simply run:
-
-```bash
-bash ~/.bin/bashlight/install.bash
 ```
 
 ### Supported operating systems

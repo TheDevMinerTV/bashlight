@@ -13,6 +13,13 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # shellcheck source=config.bash
 . "${THIS_FILE}/config.bash"
 
+# Copying over all required files to ~/.bin/bashlight
+mkdir ~/.bin/
+mkdir ${BASHLIGHT_PATH}
+cp -r bashlight config.bash config install/ migrate.bash src/ update.bash .git ${BASHLIGHT_PATH}
+echo "if [ -d ${BASHLIGHT_PATH} ]; then . ${BASHLIGHT_PATH}/bashlight; fi" >> ~/.bashrc
+echo "    ✓  Bashlight has been successfully installed!"
+
 # shellcheck source=install/git.bash
 . "${BASHLIGHT_PATH}/install/git.bash"
 

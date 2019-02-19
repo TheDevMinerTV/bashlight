@@ -15,7 +15,7 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Copying over all required files to ~/.bin/bashlight
 REQUIRED_FILES="assets bashlight config.bash config install/ migrate.bash src/ update.bash .git"
-INSTALL_DIR="~/.bin/bashlight"
+INSTALL_DIR="$HOME/.bin/bashlight"
 
 grep -q 'if \[ -f ~/.bin/bashlight/bashlight \]' ~/.bashrc
 newInstall=$?

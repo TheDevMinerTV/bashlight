@@ -45,7 +45,7 @@ else
 	if [ ! -d ~/.bin ]; then
 		mkdir ~/.bin/
 		if [ ! -d ~/.bin/bashlight ]; then
-			mkdir "$INSTALL_DIR
+			mkdir "$INSTALL_DIR"
 			echo "    🛈  Creating ${INSTALL_DIR}!"
 		fi
 	fi

@@ -34,7 +34,10 @@ then
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	cp -r "$REQUIRED_FILES" "$INSTALL_DIR"
+	echo "$REQUIRED_FILES" | while read f1 f2 f3 f4 f5 f6 f7 f8 f9
+	do
+    	cp "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$INSTALL_DIR"
+	done
 elif [[ "${oldInstall}" == 0 ]]
 then
 	echo "    🛈  Migrating from old bashlight!"
@@ -50,7 +53,10 @@ else
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	cp -r "$REQUIRED_FILES" "$INSTALL_DIR"
+	echo "$REQUIRED_FILES" | while read f1 f2 f3 f4 f5 f6 f7 f8 f9
+	do
+    	cp "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$INSTALL_DIR"
+	done
 fi
 
 echo "    ✓  Bashlight has been successfully installed!"

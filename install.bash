@@ -16,8 +16,8 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Copying over all required files to ~/.bin/bashlight
 mkdir ~/.bin/
 mkdir "${BASHLIGHT_PATH}"
-cp -r bashlight config.bash config install/ migrate.bash src/ update.bash .git "${BASHLIGHT_PATH}"
-echo "if [ -d ${BASHLIGHT_PATH} ]; then . ${BASHLIGHT_PATH}/bashlight; fi" >> ~/.bashrc
+cp -r assets bashlight config.bash config install/ migrate.bash src/ update.bash .git "${BASHLIGHT_PATH}"
+echo "if [ -d ${BASHLIGHT_PATH}/bashlight ]; then . ${BASHLIGHT_PATH}/bashlight; fi" >> ~/.bashrc
 echo "    ✓  Bashlight has been successfully installed!"
 
 # shellcheck source=install/git.bash

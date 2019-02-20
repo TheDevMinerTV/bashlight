@@ -14,7 +14,7 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 . "${THIS_FILE}/config.bash"
 
 # Copying over all required files to ~/.bin/bashlight
-REQUIRED_FILES="assets bashlight config.bash config install/ migrate.bash src/ update.bash .git"
+REQUIRED_FILES="assets bashlight config.bash config install/ LICENSE.md migrate.bash src/ update.bash .git"
 INSTALL_DIR="$HOME/.bin/bashlight"
 
 grep -q 'if \[ -f ~/.bin/bashlight/bashlight \]' ~/.bashrc
@@ -34,9 +34,9 @@ then
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	echo "$REQUIRED_FILES" | while read -r f1 f2 f3 f4 f5 f6 f7 f8 f9
+	echo "$REQUIRED_FILES" | while read f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
 	do
-    	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$INSTALL_DIR"
+    	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$f10" "$INSTALL_DIR"
 	done
 elif [[ "${oldInstall}" == 0 ]]
 then
@@ -53,9 +53,9 @@ else
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	echo "$REQUIRED_FILES" | while read -r f1 f2 f3 f4 f5 f6 f7 f8 f9
+	echo "$REQUIRED_FILES" | while read f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
 	do
-    	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$INSTALL_DIR"
+    	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$f10" "$INSTALL_DIR"
 	done
 fi
 

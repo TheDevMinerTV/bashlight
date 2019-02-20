@@ -24,7 +24,7 @@ function bashlightLicense() {
 
 function bashlightHelp() {
 	echo -e "${2} version ${1}"
-	echo -e "iiiUsage: ${2} [OPTIONS]\\n"
+	echo -e "Usage: ${2} [OPTIONS]\\n"
 	echo -e "OPTIONS include:"
 	echo -e "   -h  | --help     - displays this message"
 	echo -e "   -l  | --license  - prints out the license of this script"

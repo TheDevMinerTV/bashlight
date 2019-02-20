@@ -34,7 +34,7 @@ then
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	echo "$REQUIRED_FILES" | while read f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
+	echo "$REQUIRED_FILES" | while read -r f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
 	do
     	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$f10" "$INSTALL_DIR" || exit
 	done
@@ -53,7 +53,7 @@ else
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	echo "$REQUIRED_FILES" | while read f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
+	echo "$REQUIRED_FILES" | while read -r f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
 	do
     	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$f10" "$INSTALL_DIR" || exit
 	done

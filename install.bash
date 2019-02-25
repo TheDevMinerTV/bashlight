@@ -14,13 +14,13 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 . "${THIS_FILE}/config.bash"
 
 # Copying over all required files to ~/.bin/bashlight
-REQUIRED_FILES="assets bashlight config.bash config install/ LICENSE.md migrate.bash src/ update.bash .git"
+REQUIRED_FILES="assets/ bashlight config.bash config install/ LICENSE.md migrate.bash src/ update.bash .git"
 INSTALL_DIR="$HOME/.bin/bashlight" # Don't modify, or it will break everything!
 
 install_bashlight() {
 	for FILE in $REQUIRED_FILES
 	do
-    	mv -r "$FILE" "$INSTALL_DIR" || exit
+    	mv "$FILE" "$INSTALL_DIR" || exit
 	done
 }
 

@@ -17,7 +17,7 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 INSTALL_DIR="$HOME/.bin/bashlight"
 
 install_bashlight() {
-	for FILE in "$REQUIRED_FILES"
+	for FILE in $REQUIRED_FILES
 	do
     	mv -r "$FILE" "$INSTALL_DIR" || exit
 	done

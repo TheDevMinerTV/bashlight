@@ -14,8 +14,15 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 . "${THIS_FILE}/config.bash"
 
 # Copying over all required files to ~/.bin/bashlight
-REQUIRED_FILES="assets bashlight config.bash config install/ LICENSE.md migrate.bash src/ update.bash .git"
-INSTALL_DIR="$HOME/.bin/bashlight"
+for INSTALL_DIR="$HOME/.bin/bashlight"
+
+install_bashlight() {
+	for FILE in "$REQUIRED_FILES"
+	do
+    	mv -r "$FILE" "$INSTALL_DIR" || exit
+	done
+}
+
 
 echo "    🛈  Checking for bashrc for bashlight!"
 
@@ -37,10 +44,7 @@ then
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	echo "$REQUIRED_FILES" | while read -r f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
-	do
-    	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$f10" "$INSTALL_DIR" || exit
-	done
+	install_bashlight
 elif [[ "${oldInstall}" == 0 ]]
 then
 	echo "    🛈  Migrating from old bashlight!"
@@ -56,11 +60,10 @@ else
 		fi
 	fi
 	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
-	echo "$REQUIRED_FILES" | while read -r f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
-	do
-    	cp -r "$f1" "$f2" "$f3" "$f4" "$f5" "$f6" "$f7" "$f8" "$f9" "$f10" "$INSTALL_DIR" || exit
-	done
+	install_bashlight
 fi
+
+unset install_bashlight
 
 echo "    ✓  Bashlight has been successfully installed!"
 

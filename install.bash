@@ -14,6 +14,7 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 . "${THIS_FILE}/config.bash"
 
 # Copying over all required files to ~/.bin/bashlight
+REQUIRED_FILES="assets bashlight config.bash config install/ LICENSE.md migrate.bash src/ update.bash .git"
 INSTALL_DIR="$HOME/.bin/bashlight"
 
 install_bashlight() {

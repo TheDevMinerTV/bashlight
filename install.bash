@@ -18,9 +18,10 @@ REQUIRED_FILES="assets/ bashlight config.bash config install/ LICENSE.md migrate
 INSTALL_DIR="$HOME/.bin/bashlight" # Don't modify, or it will break everything!
 
 install_bashlight() {
+	rm -rf "$INSTALL_DIR"
 	for FILE in $REQUIRED_FILES
 	do
-    	mv "$FILE" "$INSTALL_DIR" || exit
+    	cp -r "$FILE" "$INSTALL_DIR" || exit
 	done
 }
 

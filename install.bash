@@ -15,7 +15,7 @@ readonly THIS_FILE=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Copying over all required files to ~/.bin/bashlight
 REQUIRED_FILES="assets bashlight config.bash config install/ LICENSE.md migrate.bash src/ update.bash .git"
-INSTALL_DIR="$HOME/.bin/bashlight"
+INSTALL_DIR="$HOME/.bin/bashlight" # Don't modify, or it will break everything!
 
 install_bashlight() {
 	for FILE in $REQUIRED_FILES
@@ -24,9 +24,7 @@ install_bashlight() {
 	done
 }
 
-
 echo "    🛈  Checking for bashrc for bashlight!"
-
 
 grep -q 'if \[ -f ~/.bin/bashlight/bashlight \]' ~/.bashrc
 newInstall=$?
@@ -44,7 +42,7 @@ then
 			echo "    🛈  Creating ${INSTALL_DIR}!"
 		fi
 	fi
-	echo "    🛈  Installing bashlight into ${INSTALL_DIR}!"
+	echo "    🛈  Installing bashlight into ~/.bin/bashlight/bashlight!"
 	install_bashlight
 elif [[ "${oldInstall}" == 0 ]]
 then
@@ -52,7 +50,7 @@ then
 	./migrate.bash
 else
 	echo "    🛈  Adding bashlight to bashrc!"
-	echo "if [ -f ${INSTALL_DIR}/bashlight ]; then . ${INSTALL_DIR}/bashlight; fi" >> ~/.bashrc
+	echo "if [ -f ~/.bin/bashlight/bashlight ]; then . ~/.bin/bashlight/bashlight; fi" >> ~/.bashrc
 	if [ ! -d ~/.bin ]; then
 		mkdir ~/.bin/
 		if [ ! -d ~/.bin/bashlight ]; then
